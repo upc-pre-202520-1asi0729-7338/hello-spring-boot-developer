@@ -6,15 +6,14 @@ import com.acme.hello.platform.generic.interfaces.rest.assemblers.GreetDeveloper
 import com.acme.hello.platform.generic.interfaces.rest.resources.GreetDeveloperRequest;
 import com.acme.hello.platform.generic.interfaces.rest.resources.GreetDeveloperResponse;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
 @RestController
-@RequestMapping( name = "/api/v1/greetings", produces = APPLICATION_JSON_VALUE)
+@RequestMapping( path = "/api/v1/greetings", produces = MediaType.APPLICATION_JSON_VALUE)
 public class GreetingsController {
 
     @GetMapping
