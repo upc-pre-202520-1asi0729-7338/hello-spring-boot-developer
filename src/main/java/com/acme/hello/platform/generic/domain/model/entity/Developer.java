@@ -1,5 +1,8 @@
 package com.acme.hello.platform.generic.domain.model.entity;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.With;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.UUID;
@@ -12,6 +15,9 @@ import java.util.UUID;
  * @version 1.0.0
  * @since 2025-09-06
  */
+@Getter
+@With
+@Builder
 public class Developer {
     private final UUID id = UUID.randomUUID();
     private final String firstName;
@@ -22,7 +28,7 @@ public class Developer {
      * @param firstName The first name of the developer.
      * @param lastName The last name of the developer.
      */
-    public Developer(String firstName, String lastName) {
+    private Developer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
